@@ -138,6 +138,16 @@
   del dic1["숫자5"]
   print(dic1))
   ```
+  딕셔너리 전체 조회
+  ```
+  for k in article.keys() :
+     print(k)
+
+  for v in article.values() :
+     print(v)
+
+  for v, k in article.items() :
+     print("{} : {}".format(k, v))
   ---
   **클래스**
   
@@ -147,3 +157,39 @@
 * 클래스의 첫글자는 대문자로 작성해야하며, 숫자나 특수문자로는 시작할 수 없다. 
 * 객체는 복사본이다
 * 클래스 안에 함수 메서드 넣을때는 self 사용하기(자신의 것을 사용할 때)
+* 별도로 문법안에 들어간 함수는 무조건 self 넣어줘야함.
+ 
+ ---
+ **외부 모듈**
+ 
+ 외부 모듈을 가져와서 사용할 수 있다.
+ ```
+ import class3
+ class3.bye()
+
+ from class3 import bye # bye 함수 사용
+ from class3 import * # 전체 함수 사용
+ ```
+
+ ---
+ **파일저장 및 가져오기**
+
+ 1) 파일 저장
+
+ ```기본문법 => open("파일경로/파일이름.확장자","모드")```
+  - 모드는 4가지 정도 외우기
+  - 텍스트 문서는 t, 그 외 이미지나 사운드는 다 b
+    - wb - 2진수로 작성 
+    - wt - 문자로 작성
+    - rb - 2진수로 읽어옴
+    - rt - 문자로 읽어옴 
+  - 다 작성했으면 꼭 close() 써서 닫아주기
+
+ 2) 파일 가져오기 예시
+  ```
+  f2 = open("class2.txt", "rt")
+  print(f2.read()) # 전체 읽어옴
+  print(f2.readline()) # 한줄씩 읽어옴
+  f2.close()
+  ```
+  
